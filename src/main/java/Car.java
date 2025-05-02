@@ -20,7 +20,4 @@ public class Car {
         return position;
     }
 
-    public String getPositionAsString(){
-        return "-".repeat(position);
-    }
 }
