@@ -1,18 +1,20 @@
+package domain;
+
 public class Car {
     private final String carName;
     private int position = 0;
 
-    public Car(String name){
+    public Car(String name) {
         this.carName = name;
     }
 
-    public void move(Movable movable){
-        if(movable.canMove()){
+    public void move(Movable movable) {
+        if (movable.canMove()) {
             position++;
         }
     }
 
-    public String getCarName(){
+    public String getCarName() {
         return carName;
     }
 

@@ -1,3 +1,5 @@
+package domain;
+
 public class RandomMove implements Movable {
     //값의 의미나 목적을 코드에서 명확하게 알리고 가독성을 위한 상수 사용
     //4는 전진 조건, 10은 랜덤 범위를 의미. 추후 변경 시 상수만 수정하면 됨

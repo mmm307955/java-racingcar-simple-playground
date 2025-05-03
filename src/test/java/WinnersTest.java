@@ -1,7 +1,9 @@
+import domain.Winners;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
+import domain.Car;
 import java.util.List;
+import View.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -23,8 +25,9 @@ public class WinnersTest {
         for(int i = 0; i < 5; i++){
             carC.move(()->true);
         }
+        int gameRound = 5;
 
         List<Car> cars = List.of(carA, carB, carC);
-        assertThat(Winners.findWinnersNames(cars)).containsExactlyInAnyOrder("Car A","Car C");
+        assertThat(Winners.findWinnersNames(cars,gameRound)).containsExactlyInAnyOrder("Car A","Car C");
     }
 }
