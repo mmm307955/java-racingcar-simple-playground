@@ -11,7 +11,7 @@ import view.ResultView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class Application {
     public static void main(String[] args) {
         InputView input = new InputView();
         ResultView resultView = new ResultView();
