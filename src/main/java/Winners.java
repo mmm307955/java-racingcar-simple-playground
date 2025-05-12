@@ -1,14 +1,12 @@
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Winners {
-    public static List<String> findWinnersNames(List<Car> cars){
-        List<String> winners = new ArrayList<>();
-        for(int i = 0; i < cars.size(); i++){
-            if(cars.get(i).getPosition() >= 5){
-                winners.add(cars.get(i).getCarName());
-            }
-        }
-        return winners;
-    }
+
+  public static List<String> findWinnersNames(List<Car> cars) {
+    return cars.stream()
+        .filter(car -> car.getPosition() >= 5)
+        .map(Car::getCarName)
+        .collect(Collectors.toList());
+  }
 }

@@ -1,23 +1,28 @@
 public class Car {
-    private final String carName;
-    private int position = 0;
 
-    public Car(String name){
-        this.carName = name;
-    }
+  private final String carName;
+  private int position = 0;
+  private final RandomMove randomMove;
 
-    public void move(Movable movable){
-        if(movable.canMove()){
-            position++;
-        }
-    }
+  public Car(String name, RandomMove randomMove,int position) {
 
-    public String getCarName(){
-        return carName;
-    }
+    this.carName = name;
+    this.randomMove = randomMove;
+    this.position = position;
+  }
 
-    public int getPosition() {
-        return position;
+  public void move(Movable movable) {
+    if (randomMove.canMove()) {
+      position++;
     }
+  }
+
+  public String getCarName() {
+    return carName;
+  }
+
+  public int getPosition() {
+    return position;
+  }
 
 }

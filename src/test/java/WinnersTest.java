@@ -1,30 +1,20 @@
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
 public class WinnersTest {
-    @Test
-    @DisplayName("우승자(들) 이름을 반환한다")
-    void returnWinnerNames(){
-        Car carA = new Car("Car A");
-        Car carB = new Car("Car B");
-        Car carC = new Car("Car C");
 
-        for(int i = 0; i < 5; i++){
-            carA.move(()->true);
-        }
+  @Test
+  @DisplayName("우승자(들) 이름을 반환한다")
+  void returnWinnerNames() {
+    Car normalCar = new Car("Car A",new RandomMove(4,10),5);
+    Car electricCar = new Car("Car B",new RandomMove(5,10),4);
+    Car truck = new Car("Car C",new RandomMove(6,10),2);
+    Car mini = new Car("Car D",new RandomMove(3,10),5);
 
-        for(int i = 0; i < 4; i++){
-            carB.move(()->true);
-        }
-        for(int i = 0; i < 5; i++){
-            carC.move(()->true);
-        }
-
-        List<Car> cars = List.of(carA, carB, carC);
-        assertThat(Winners.findWinnersNames(cars)).containsExactlyInAnyOrder("Car A","Car C");
-    }
+    List<Car> cars = List.of(normalCar, electricCar, truck, mini);
+    assertThat(Winners.findWinnersNames(cars)).containsExactlyInAnyOrder("Car A", "Car D");
+  }
 }
