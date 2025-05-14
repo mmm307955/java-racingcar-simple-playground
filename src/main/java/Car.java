@@ -2,17 +2,16 @@ public class Car {
 
   private final String carName;
   private int position = 0;
-  private final RandomMove randomMove;
+  private final RandomMovable randomMovable;
 
-  public Car(String name, RandomMove randomMove,int position) {
-
+  public Car(String name, RandomMovable randomMovable, int position) {
     this.carName = name;
-    this.randomMove = randomMove;
+    this.randomMovable = randomMovable;
     this.position = position;
   }
 
-  public void move(Movable movable) {
-    if (randomMove.canMove()) {
+  public void move() {
+    if (randomMovable.canMove()) {
       position++;
     }
   }
