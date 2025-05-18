@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class WinnersTest {
 
     @Test
-    @DisplayName("우승자들 이름을 반환한다")
+    @DisplayName("우승자들 다수의 이름을 반환하는지 테스트한다")
     void return_Winners_Names() {
         //Given
         Car normalCar = new Car("일반차", new RandomMovable(4, 10), 7);
@@ -29,7 +29,7 @@ public class WinnersTest {
     }
 
     @Test
-    @DisplayName("우승자 한 명의 이름을 반환한다")
+    @DisplayName("우승자 한 명의 이름을 반환하는지 테스트한다")
     void return_One_Winner_Name() {
         //Given
         Car puppy = new Car("강아지", new RandomMovable(4, 10), 7);
@@ -45,7 +45,7 @@ public class WinnersTest {
     }
 
     @Test
-    @DisplayName("리스트가 비어있을 때")
+    @DisplayName("우승자 리스트가 비어 있을 때 빈 리스트를 반환하는지 테스트한다")
     void return_empty_List() {
         //Given
         List<Car> cars = List.of();

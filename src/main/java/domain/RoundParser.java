@@ -3,9 +3,14 @@ package domain;
 public class RoundParser {
     public static int parseRound(String input) {
         validateInputNotEmpty(input);
-        int round = Integer.parseInt(input.trim());
-        validateRoundNumber(round);
-        return round;
+
+        try {
+            int round = Integer.parseInt(input.trim());
+            validateRoundNumber(round);
+            return round;
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("유효한 숫자를 입력해주세요.");
+        }
     }
 
     private static void validateInputNotEmpty(String input) {
