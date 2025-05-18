@@ -1,6 +1,6 @@
 package domain.car;
 
-//import domain.Movable;
+//import domain.strategy.Movable;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

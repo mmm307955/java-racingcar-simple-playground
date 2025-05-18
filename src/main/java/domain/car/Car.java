@@ -1,6 +1,6 @@
 package domain.car;
 
-import domain.Movable;
+import domain.strategy.Movable;
 
 public class Car {
     private final String carName;

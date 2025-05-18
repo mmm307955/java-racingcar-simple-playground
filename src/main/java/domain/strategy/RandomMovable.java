@@ -1,6 +1,5 @@
 package domain.strategy;
 
-import domain.Movable;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomMovable implements Movable {

@@ -45,4 +45,17 @@ class CarNameParserTest {
         //Then
         assertThat(result).containsExactly("빨", "주", "노", "초");
     }
+
+    @Test
+    @DisplayName("자동차 이름 내부에 공백 포함될 경우 공백을 지워 반환한다")
+    void return_after_removing_space_inner_names() {
+        //Given
+        String names = "강 아지,고 양이";
+
+        //When
+        List<String> result = CarNameParser.nameParse(names);
+
+        //Then
+        assertThat(result).containsExactly("강아지", "고양이");
+    }
 }

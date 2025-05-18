@@ -1,6 +1,7 @@
+package domain;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
-import domain.Winners;
 import domain.car.Car;
 import domain.strategy.RandomMovable;
 import java.util.List;
@@ -47,9 +48,6 @@ public class WinnersTest {
     @DisplayName("리스트가 비어있을 때")
     void return_empty_List() {
         //Given
-        Car puppy = new Car("강아지", new RandomMovable(4, 10), 7);
-        Car kitty = new Car("고양이", new RandomMovable(5, 10), 6);
-        Car hamster = new Car("햄스터", new RandomMovable(6, 10), 3);
         List<Car> cars = List.of();
 
         //When

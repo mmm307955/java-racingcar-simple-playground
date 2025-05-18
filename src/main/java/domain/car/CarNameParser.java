@@ -11,6 +11,7 @@ public class CarNameParser {
         }
         return Arrays.stream(input.split(","))
             .map(String::trim)
+            .map(name -> name.replaceAll("\\s+", "")) //이름 내부 공백 제거
             .filter(name -> !name.isEmpty())
             .collect(Collectors.toList());
     }
