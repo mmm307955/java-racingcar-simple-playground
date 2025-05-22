@@ -1,6 +1,5 @@
 package view;
 
-import domain.RoundParser;
 import java.util.Scanner;
 
 public class InputView {
@@ -11,10 +10,9 @@ public class InputView {
         return sc.nextLine();
     }
 
-    public static int getTryCount() {
+    public static String getTryCount() {
         System.out.println("시도할 회수는 몇회인가요?");
-        //횟수를 입력받고 유효한지 확인 후 적절하면 저장한다.
-        return RoundParser.parseRound(sc.nextLine());
+        return sc.nextLine();
     }
 
 }

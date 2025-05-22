@@ -1,5 +1,6 @@
 package controller;
 
+import domain.RoundParser;
 import domain.Winners;
 import domain.car.Car;
 import domain.car.CarNameParser;
@@ -11,9 +12,9 @@ public class RacingGame {
     private final List<Car> cars;
     private final int tryCount;
 
-    public RacingGame(String carNames, int tryCount) {
+    public RacingGame(String carNames, String tryCount) {
         this.cars = createCars(carNames);
-        this.tryCount = tryCount;
+        this.tryCount = RoundParser.parseRound(tryCount);
     }
 
     private List<Car> createCars(String carNames) {
