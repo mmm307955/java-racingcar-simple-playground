@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CarNameParser {
-    public static List<String> nameParse(String input){
-        if ( input == null || input.trim().isEmpty()){
+    public static List<String> nameParse(String input) {
+        if (input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException("입력값은 비워둘 수 없습니다.");
         }
         return Arrays.stream(input.split(","))

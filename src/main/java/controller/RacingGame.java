@@ -1,12 +1,11 @@
 package controller;
 
-import View.OutputView;
 import domain.Winners;
 import domain.car.Car;
 import domain.car.CarNameParser;
-import domain.strategy.RandomMovable;
 import java.util.ArrayList;
 import java.util.List;
+import view.OutputView;
 
 public class RacingGame {
     private final List<Car> cars;
@@ -21,19 +20,22 @@ public class RacingGame {
         List<String> parsedNames = CarNameParser.nameParse(carNames);
         List<Car> cars = new ArrayList<>();
         for (String name : parsedNames) {
-            cars.add(new Car(name, new RandomMovable(4, 10), 0));
+            cars.add(Car.createDefaultCar(name));
         }
         return cars;
     }
 
     public void run() {
         for (int i = 0; i < tryCount; i++) {
-            for (Car car : cars) {
-                car.move();
-                OutputView.printCarStatus(car);
-            }
-            System.out.println();
+            moveCars();
+            OutputView.printCarStatuses(cars);
         }
         OutputView.printWinner(Winners.findWinnersNames(cars));
+    }
+
+    private void moveCars() {
+        for (Car car : cars) {
+            car.move();
+        }
     }
 }

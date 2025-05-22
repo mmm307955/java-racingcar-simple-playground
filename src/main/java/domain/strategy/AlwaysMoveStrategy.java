@@ -2,7 +2,7 @@ package domain.strategy;
 
 public class AlwaysMoveStrategy implements Movable {
     @Override
-    public boolean canMove(){
+    public boolean canMove() {
         return true;
     }
 }

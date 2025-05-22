@@ -1,5 +1,5 @@
-import View.InputView;
 import controller.RacingGame;
+import view.InputView;
 
 public class Application {
     public static void main(String[] args) {

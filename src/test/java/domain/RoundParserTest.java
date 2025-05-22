@@ -41,7 +41,7 @@ class RoundParserTest {
         String input = "   3  9  ";
 
         // When & Then
-        assertThatThrownBy(()-> RoundParser.parseRound(input))
+        assertThatThrownBy(() -> RoundParser.parseRound(input))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("유효한 숫자를 입력해주세요.");
     }
@@ -93,7 +93,6 @@ class RoundParserTest {
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("유효한 숫자를 입력해주세요.");
     }
-
 
 
     @Test

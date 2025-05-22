@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-public class CarMovementStrategyTest {
+class CarMovementStrategyTest {
     @ParameterizedTest
     @ValueSource(ints = {3, 5, 10})
     @DisplayName("주어진 횟수동안 자동차(들)는 전진 또는 멈출 수 있다")
@@ -26,6 +26,6 @@ public class CarMovementStrategyTest {
 
         //Then
         Assertions.assertThat(elecCar.getPosition()).isEqualTo(round);
-        Assertions.assertThat(oilCar.getPosition()).isEqualTo(0);
+        Assertions.assertThat(oilCar.getPosition()).isZero();
     }
 }
